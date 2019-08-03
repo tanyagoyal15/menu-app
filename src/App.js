@@ -3,23 +3,27 @@ import './App.css';
 import Items from './components/Items';
 import Filter from './components/Filter';
 import Cart from './components/Cart';
+import Navbar from './components/Navbar';
+import Carousel from './components/Carousel';
+import Footer from './components/Footer';
+import Discover from './components/Discover';
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      type: '', 
-      location: '',
+      cuisines: '', 
+      inputValue: '',
       items : [],
       filteredItems : [],
       cartItems : []
     };
-    this.handleChangeLocation = this.handleChangeLocation.bind(this);
-    this.handleChangeType = this.handleChangeType.bind(this);
+    this.handleChangeCuisines = this.handleChangeCuisines.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.handleRemoveFromCart = this.handleRemoveFromCart.bind(this);
     this.handleIncrement = this.handleIncrement.bind(this);
     this.handleDecrement = this.handleDecrement.bind(this);
+    this.handleInput = this.handleInput.bind(this);
   }
 
   componentDidMount() {
@@ -34,30 +38,43 @@ class App extends Component {
     }
   }
 
-  handleChangeLocation(e) {
-    this.setState({location : e.target.value});
-    this.listItems();
-  }
+  // handleChangeLocation(e) {
+  //   this.setState({location : e.target.value});
+  //   this.listItems();
+  // }
 
-  handleChangeType(e) {
-    this.setState({type : e.target.value});
+  handleChangeCuisines(e) {
+    this.setState({cuisines : e.target.value});
+    console.log(this.state.cuisines)
     this.listItems();
   }
   
+
+  handleInput(e) {
+    this.setState({inputValue : e.target.value});
+    this.listItems();
+  }
+
   listItems() {
     this.setState(state => {
 
-    if(state.type!=='' && state.location!=='' ) {
+    if(state.cuisines !=='') {
       return { filteredItems : state.items.filter(a =>
-        a.type.indexOf(state.type) >=0  && a.location.indexOf(state.location.toUpperCase())>=0
-        )}
-    }
-
-    if(state.location!=='' && state.type!=='') {
-      return { filteredItems : state.items.filter(b => 
-        b.location.indexOf(state.location.toUpperCase())>=0 && b.type.indexOf(state.type) >=0 
+        a.cuisines.indexOf(state.cuisines) >=0
       )}
     }
+
+    if(state.inputValue !== '') {
+      return {filteredItems : state.items.filter(b => 
+        b.name.toLowerCase().includes(this.state.inputValue.toLowerCase()) 
+      )}
+    }
+
+    // if(state.location!=='' && state.type!=='') {
+    //   return { filteredItems : state.items.filter(b => 
+    //     b.location.indexOf(state.location.toUpperCase())>=0 && b.type.indexOf(state.type) >=0 
+    //   )}
+    // }
       return { filteredItems: state.items }
     })
   }
@@ -109,7 +126,7 @@ class App extends Component {
     }
   }
 
-handleIncrement(e, item){
+  handleIncrement(e, item){
     let tempCart = [...this.state.cartItems];
     const selectedItem = tempCart.find(ci => ci.itemno === item.itemno);
 
@@ -132,25 +149,37 @@ handleIncrement(e, item){
 
   render() {
   return (
-    <div className="container-fluid mx-20">
+    <div className="container-fluid">
       <div className="row">
-        <div className="col-md-8">
-          <h1 className="text-center">Food Menu</h1>
-          <Filter count={this.state.filteredItems.length}
-                  handleChangeType={this.handleChangeType} 
-                  handleChangeLocation={this.handleChangeLocation} />
-          <hr/>
-          <Items items={this.state.filteredItems} handleAddToCart={this.handleAddToCart} 
-          />
+        <Navbar/>
+        <Carousel />
+        <Discover />
+        <h2 className="col-md-12 text-center">Featured Menu</h2>
+        <p className="col-md-12 text-center">Taste the best of our elaborate spread that has been our customer’s favorite made with only the best and the freshest ingredients.</p>
+        <div className="container-fluid" >
+          <div className="row">
+            <div className="col-md-8">
+              <hr/>
+              <Filter handleChangeCuisines={this.handleChangeCuisines}
+                      handleInput = {this.handleInput}/>
+              <Items  handleChangeCuisines={this.handleChangeCuisines}
+                      cuisines={this.state.cuisines}
+                      count={this.state.filteredItems.length} 
+                      items={this.state.filteredItems} 
+                      handleAddToCart={this.handleAddToCart} 
+              />
+            </div>
+            <div className="col-md-4 cart">
+            <hr style={{"margin " : "0"}}/>
+              <Cart 
+                cartItems={this.state.cartItems} 
+                handleRemoveFromCart={this.handleRemoveFromCart}
+                handleIncrement={this.handleIncrement}
+                handleDecrement={this.handleDecrement}/>
+            </div>
+          </div>
         </div>
-        <div className="col-md-4 cart">
-        <hr style={{"margin " : "0"}}/>
-          <Cart 
-            cartItems={this.state.cartItems} 
-            handleRemoveFromCart={this.handleRemoveFromCart}
-            handleIncrement={this.handleIncrement}
-            handleDecrement={this.handleDecrement}/>
-        </div>
+        <Footer />
       </div>
     </div>
   );

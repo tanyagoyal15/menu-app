@@ -4,8 +4,8 @@ import '../App.css';
 export default class Items extends Component {
 	render() {
 		const foodItems = this.props.items.map((item) => (
-            <div className=" container-fluid items" key={item.itemno}>
-            	<div className="thumbnail">
+            <div className="items" key={item.itemno}>
+            	<div className="thumbnail row">
             	<a href={`#${item.itemno}`} onClick={(e) => this.props.handleAddToCart(e, item)}>
             		<img src={`/food-items/${item.itemno}.jpg`} alt={item.name} style={{"height" : "100px" , "width" : "200px"}}/>
             		<p className="item-name text-center">{item.name}</p>
@@ -21,7 +21,10 @@ export default class Items extends Component {
 
 		return (
 			<div className="row">
-				{foodItems}
+                        <div className="food-items row">
+                              <p className="total-items">{this.props.count} items found</p>
+                              {foodItems}
+                        </div>
 			</div>
 		)
 	}
