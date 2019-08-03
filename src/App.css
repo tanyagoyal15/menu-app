@@ -148,21 +148,33 @@ select:focus {
   /*align-items: center;*/
   width: 250px;
   top: 20%;
+  margin-bottom: 30px;
 }
 
 .thumbnail {
-  height: 200px;
-  width: 200px;
-  margin-bottom: 20px;
+  /*height: 200px;*/
+  /*width: 10%;*/
+  /*margin-bottom: 30px;*/
   margin-right: 0;
-  padding: 0;
-  background-color:  #e6ffff;
+  padding: 20px !important;
+  /*border: 1px solid #ccc;*/
+  /*background-color: #ccc;*/
+}
+
+.thumbnail img {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+.thumbnail:hover {
+  border: 1px solid #ccc;
+  box-shadow: 0 7px 15px 0 #e9e9e9;
 }
 
 .item-name {
   text-decoration: none;
   font-size: 20px;
   color: #000;
+  margin-top: 10px;
 }
 
 .item-price {
@@ -209,8 +221,13 @@ select:focus {
   font-size: 15px;
 }
 
+.item-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .cart-btn {
-  width: 100px;
+  /*width: 100px;*/
   height: 40px;
   background-color: white;
   border-radius: 30px;

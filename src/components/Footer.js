@@ -6,8 +6,8 @@ export default class Footer extends Component {
 		return (
 			<div className="Footer container-fluid">
 				<div className="col-md-11">
-					<p></p>
-					<p>Hiiiiii</p> 
+					<p>Contact Us</p>
+					<p>9455781049</p> 
 				</div>
 				<div className='col-md-1'>
 					<p>Follow Us</p>

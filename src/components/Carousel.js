@@ -12,7 +12,7 @@ export default class Carousel extends Component {
 			        activeItem={1}
 			        length={4}
 			        showControls={false}
-			        showIndicators={false}
+			        showIndicators={true}
 			        className="z-depth-1"
 			        slide
 			      >
@@ -21,9 +21,9 @@ export default class Carousel extends Component {
 			            <MDBView>
 			              <img
 			                className="d-block w-100"
-			                src="/food-items/21.jpg"
+			                src="/food-items/p1.jpg"
 			                alt="First slide"
-			                style={{'height' : '450px'}}
+			                style={{'height' : '600px'}}
 			              />
 			            </MDBView>
 			          </MDBCarouselItem>
@@ -31,9 +31,9 @@ export default class Carousel extends Component {
 			            <MDBView>
 			              <img
 			                className="d-block w-100"
-			                src="/food-items/22.jpg"
+			                src="/food-items/p2.jpg"
 			                alt="Second slide"
-			                style={{'height' : '450px'}}
+			                style={{'height' : '600px'}}
 			              />
 			            </MDBView>
 			          </MDBCarouselItem>
@@ -41,9 +41,9 @@ export default class Carousel extends Component {
 			            <MDBView>
 			              <img
 			                className="d-block w-100"
-			                src="/food-items/23.jpg"
+			                src="/food-items/p3.jpg"
 			                alt="Third slide"
-			                style={{'height' : '450px'}}
+			                style={{'height' : '600px'}}
 			              />
 			            </MDBView>
 			          </MDBCarouselItem>
@@ -51,9 +51,9 @@ export default class Carousel extends Component {
 			            <MDBView>
 			              <img
 			                className="d-block w-100"
-			                src="/food-items/24.jpg"
+			                src="/food-items/p4.jpg"
 			                alt="Third slide"
-			                style={{'height' : '450px'}}
+			                style={{'height' : '600px'}}
 			              />
 			            </MDBView>
 			          </MDBCarouselItem>
