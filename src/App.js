@@ -38,11 +38,6 @@ class App extends Component {
     }
   }
 
-  // handleChangeLocation(e) {
-  //   this.setState({location : e.target.value});
-  //   this.listItems();
-  // }
-
   handleChangeCuisines(e) {
     this.setState({cuisines : e.target.value});
     console.log(this.state.cuisines)
@@ -70,11 +65,6 @@ class App extends Component {
       )}
     }
 
-    // if(state.location!=='' && state.type!=='') {
-    //   return { filteredItems : state.items.filter(b => 
-    //     b.location.indexOf(state.location.toUpperCase())>=0 && b.type.indexOf(state.type) >=0 
-    //   )}
-    // }
       return { filteredItems: state.items }
     })
   }

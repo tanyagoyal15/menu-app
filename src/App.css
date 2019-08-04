@@ -64,16 +64,6 @@ body {
   transition-delay: .1s
 }
 
-/*.search-btn{
-  height: 4%;
-  position: absolute;
-  top: 17%;
-  right: -17%;
-  transition: all .2s;
-  transition-delay: .1s;
-  cursor: pointer;
-}
-*/
 .searchbar::placeholder {
   opacity: .5;
 }
@@ -145,20 +135,14 @@ select:focus {
 .items {
   display:flex;
   justify-content: space-around;
-  /*align-items: center;*/
   width: 250px;
   top: 20%;
   margin-bottom: 30px;
 }
 
 .thumbnail {
-  /*height: 200px;*/
-  /*width: 10%;*/
-  /*margin-bottom: 30px;*/
   margin-right: 0;
   padding: 20px !important;
-  /*border: 1px solid #ccc;*/
-  /*background-color: #ccc;*/
 }
 
 .thumbnail img {
@@ -227,7 +211,6 @@ select:focus {
   align-items: center;
 }
 .cart-btn {
-  /*width: 100px;*/
   height: 40px;
   background-color: white;
   border-radius: 30px;
@@ -260,11 +243,7 @@ select:focus {
 
 .socials a {
   margin-right: 10px;
-  /*width: 80%;*/
 }
-
-
-
 
 .pagination {
     margin-top: 25px;
@@ -288,13 +267,6 @@ select:focus {
 
 
 @media(max-width: 1050px) {
-  body {
-    /*background-color: yellow;*/
-  }
-  .Discover img {
-      /*text-align: center;*/
-      /*margin: 0 18% 0 18%;*/
-  }
   .filter {
     text-align: center;
     margin: 0 0 3% auto;
@@ -307,13 +279,13 @@ select:focus {
     right: 22%;  
   }
   select {
-    /*display: flex;
-    justify-content: center;
-    align-items: center;*/
     margin-right: 0 !important;
     text-align: center;
   }
   .cart {
   margin: 0 0 3% 0; 
+  }
+  .food-items p {
+    text-align: center;
   }
 }
