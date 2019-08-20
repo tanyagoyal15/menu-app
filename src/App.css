@@ -87,7 +87,6 @@ select:focus {
   width: 30%;
   height: 400px;
   border-right: 1px solid #ccc;
-  /*background-color: green;*/
 }
 
 .list ul {
@@ -115,12 +114,8 @@ select:focus {
 }
 
 .food-items {
-  /*background-color: pink;*/
   display:flex;
   justify-content: space-around;
-  /*align-items: center;*/
-  /*margin: 5%;*/
-  /*margin: 20px;*/
   width: 90%;
   margin-right: auto !important;
   margin-left: auto !important; 
@@ -166,8 +161,15 @@ select:focus {
   margin: 10px 20px 10px 10px; 
 }
 
+/*.cart {
+  position: fixed;
+  bottom: 20%;
+  right: 0;
+}*/
+
 .cart-items {
   padding: 0;
+  /*position: fixed;*/
 }
 
 .cart-headers {
@@ -245,28 +247,11 @@ select:focus {
   margin-right: 10px;
 }
 
-.pagination {
-    margin-top: 25px;
-}
-.pagination span {
-  cursor: pointer;
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color .3s;
-  border: 1px solid #ddd;
-}
-
-.pagination span.active {
-  background-color: #0099FF;
-  color: white;
-  border: 1px solid #0099FF;
-}
-
-
-
 @media(max-width: 1050px) {
+  .Discover img {
+    margin-right: auto !important;
+    margin-left: auto !important;   
+  }
   .filter {
     text-align: center;
     margin: 0 0 3% auto;

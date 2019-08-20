@@ -52,7 +52,12 @@ class App extends Component {
 
   listItems() {
     this.setState(state => {
-
+    if(state.inputValue !== '') {
+      return {filteredItems : state.items.filter(b => 
+        b.name.toLowerCase().includes(this.state.inputValue.toLowerCase()) 
+      )}
+    }
+    
     if(state.cuisines !=='') {
       return { filteredItems : state.items.filter(a =>
         a.cuisines.indexOf(state.cuisines) >=0
