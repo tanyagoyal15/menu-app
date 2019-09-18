@@ -21,7 +21,7 @@ export default class Carousel extends Component {
 			            <MDBView>
 			              <img
 			                className="d-block w-100"
-			                src="/food-items/p1.jpg"
+			                src="/food-items/p3.jpg"
 			                alt="First slide"
 			                style={{'height' : '600px'}}
 			              />
@@ -31,7 +31,7 @@ export default class Carousel extends Component {
 			            <MDBView>
 			              <img
 			                className="d-block w-100"
-			                src="/food-items/p2.jpg"
+			                src="/food-items/p4.jpg"
 			                alt="Second slide"
 			                style={{'height' : '600px'}}
 			              />
@@ -41,7 +41,7 @@ export default class Carousel extends Component {
 			            <MDBView>
 			              <img
 			                className="d-block w-100"
-			                src="/food-items/p3.jpg"
+			                src="/food-items/p1.jpg"
 			                alt="Third slide"
 			                style={{'height' : '600px'}}
 			              />
@@ -51,7 +51,7 @@ export default class Carousel extends Component {
 			            <MDBView>
 			              <img
 			                className="d-block w-100"
-			                src="/food-items/p4.jpg"
+			                src="/food-items/p2.jpg"
 			                alt="Third slide"
 			                style={{'height' : '600px'}}
 			              />

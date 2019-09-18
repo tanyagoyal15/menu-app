@@ -6,7 +6,7 @@ export default class Navbar extends Component {
 		return (
 			<div className="Navbar container-fluid">
 				<nav className="navbar navbar-expand-lg bg-dark navbar-dark">
-				  <a className="navbar-brand" href="#"><b>Logo</b></a>
+				  <a className="navbar-brand" href="#"><b>Drool<span style={{'fontSize' : '30px'}}>&</span>Dine</b></a>
 				  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation" >
 				    <span className="navbar-toggler-icon"></span>
 				  </button>
