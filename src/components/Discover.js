@@ -16,8 +16,8 @@ export default class Discover extends Component {
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					</div>
-					<div className='col-md-4'> 
-						<img src='/food-items/1.jpg'/>
+					<div className='col-md-4 col-12'> 
+						<img src='/food-items/1.jpg' className="text-center" alt='pic'/>
 					</div>
 				</div>	
 			</div>

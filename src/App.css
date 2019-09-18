@@ -249,8 +249,7 @@ select:focus {
 
 @media(max-width: 1050px) {
   .Discover img {
-    margin-right: auto !important;
-    margin-left: auto !important;   
+    margin-left: 15% !important;
   }
   .filter {
     text-align: center;
@@ -269,6 +268,7 @@ select:focus {
   }
   .cart {
   margin: 0 0 3% 0; 
+  padding : 0 10% !important;
   }
   .food-items p {
     text-align: center;
