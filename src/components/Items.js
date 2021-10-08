@@ -7,23 +7,24 @@ export default class Items extends Component {
             <div className="items" key={item.itemno}>
             	<div className="thumbnail">
             	<a href={`#${item.itemno}`} onClick={(e) => this.props.handleAddToCart(e, item)}>
-            		<img src={`/food-items/${item.itemno}.jpg`} alt={item.name} style={{"height" : "100px" , "width" : "200px"}}/>
-            		<p className="item-name text-center">{item.name}</p>
+            		<img className="food-image" src={`/food-items/${item.itemno}.jpg`} alt={item.name} style={{"height" : "180px" , "width" : "280px"}}/>
             	</a>
             	<div className="item-footer">
-            		<b className="item-price">Rs {item.price}</b>
-            		<button className="cart-btn"
-            		onClick={(e) => this.props.handleAddToCart(e , item)}>Add</button>
+					<div className="item-details">
+						<b className="item-name">{item.name}</b>
+						<b className="item-price">Rs {item.price}</b>
+					</div>
+					<button className="cart-btn" onClick={(e) => this.props.handleAddToCart(e , item)}>Add</button>
             	</div>
             	</div>
             </div>
         ));
 
 		return (
-			<div className="row">
+			<div>
                         <div className="food-items row">
                               <p className="total-items">{this.props.count} items found</p>
-                              {foodItems}
+							  <div className="menu-items">{foodItems}</div>
                         </div>
 			</div>
 		)

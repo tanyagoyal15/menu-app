@@ -7,6 +7,8 @@ import Navbar from './components/Navbar';
 import Carousel from './components/Carousel';
 import Footer from './components/Footer';
 import Discover from './components/Discover';
+import BookTable from './components/BookTable';
+import { data } from './data'
 
 class App extends Component {
   constructor(props){
@@ -27,12 +29,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("https://demo8785565.mockable.io/items")
-    .then(res => res.json())
-    .then(res => this.setState({
-      items : res.items,
-      filteredItems: res.items
-    }))
+    // fetch("/items")
+    // .then(res => res.json())
+    // .then(res => this.setState({
+    //   items : d,
+    //   filteredItems: d
+    // }))
+
+    this.setState({items : data, filteredItems : data});
     if(localStorage.getItem('cartItems')) {
       this.setState({cartItems : JSON.parse(localStorage.getItem('cartItems'))});
     }
@@ -153,8 +157,7 @@ class App extends Component {
         <p className="col-md-12 text-center">Taste the best of our elaborate spread that has been our customer’s favorite made with only the best and the freshest ingredients.</p>
         <div className="container-fluid" >
           <div className="row">
-            <div className="col-md-8">
-              <hr/>
+            <div className="col-md-12">
               <Filter handleChangeCuisines={this.handleChangeCuisines}
                       handleInput = {this.handleInput}/>
               <Items  handleChangeCuisines={this.handleChangeCuisines}
@@ -163,9 +166,6 @@ class App extends Component {
                       items={this.state.filteredItems} 
                       handleAddToCart={this.handleAddToCart} 
               />
-            </div>
-            <div className="col-md-4 cart">
-            <hr style={{"margin " : "0"}}/>
               <Cart 
                 cartItems={this.state.cartItems} 
                 handleRemoveFromCart={this.handleRemoveFromCart}
@@ -174,6 +174,7 @@ class App extends Component {
             </div>
           </div>
         </div>
+        <BookTable />
         <Footer />
       </div>
     </div>

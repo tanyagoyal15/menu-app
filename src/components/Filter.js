@@ -4,10 +4,10 @@ export default class Filter extends Component {
 	render() {
 		return (
 			<div className="row filter">
-				<div className="container col-md-4">
+				<div className="container search-input">
     				<input type="text" placeholder="Search for dishes..." className="searchbar" onChange={(e) => this.props.handleInput(e)}  />
   				</div>
-				<div className="col-md-4">
+				<div className="cuisines-filter">
 					<select value={this.props.type}
 					onChange={this.props.handleChangeCuisines}>
 						<option value="" readOnly>Cuisines</option>

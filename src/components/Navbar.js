@@ -20,7 +20,7 @@ export default class Navbar extends Component {
 				    <div className="form-inline my-2 my-lg-0">
 				    	<ul className="navbar-nav mr-auto">
 				    		<li className="nav-item">
-				    			<a href="#" className="nav-link">About US</a>
+				    			<a href="#" className="nav-link">About us</a>
 				    		</li>
 				    		<li className="nav-item">
 				    			<a href="#" className="nav-link">Contact</a>
