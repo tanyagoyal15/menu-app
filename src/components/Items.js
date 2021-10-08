@@ -6,7 +6,7 @@ export default class Items extends Component {
 		const foodItems = this.props.items.map((item) => (
             <div className="items" key={item.itemno}>
             	<div className="thumbnail">
-            	<a href={`#${item.itemno}`} onClick={(e) => this.props.handleAddToCart(e, item)}>
+            	<a href='/' onClick={(e) => this.props.handleAddToCart(e, item)}>
             		<img className="food-image" src={`/food-items/${item.itemno}.jpg`} alt={item.name} style={{"height" : "180px" , "width" : "280px"}}/>
             	</a>
             	<div className="item-footer">
